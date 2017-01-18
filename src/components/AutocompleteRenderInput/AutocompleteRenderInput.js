@@ -41,7 +41,7 @@ export default class AutocompleteRenderInput extends Component {
     const inputLength = inputValue.length;
 
 
-    let suggestions = this.props.suggestions.filter((state) => {
+    let suggestions = get(this.props, 'suggestions', []).filter((state) => {
       return state.toLowerCase().slice(0, inputLength) === inputValue;
     });
 

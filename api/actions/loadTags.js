@@ -53,6 +53,7 @@ export default async function loadTags(req) {
     const pendingTags = await PendingTag.find()
       .where('creator', req.user._id)
       .exec();
+    // console.log(pendingTags);
     return union(
       allTags.map((tag) => tag.name),
       pendingTags.map((tag) => tag.name)

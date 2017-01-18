@@ -25,7 +25,7 @@ const getResources = (state, { inputTags, inputTagsInfo }) => {
   const _inputTagsInfo = inputTagsInfo || state.inputTagsInfo;
   return intersectionBy(..._inputTags.map((tag) => {
     return get(_inputTagsInfo, `['${tag}'].data`, []);
-  }), '_id');
+  }), 'url');
 };
 
 export default function reducer(state = initialState, action = {}) {
